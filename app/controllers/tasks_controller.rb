@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    redner json: @task
+    render json: @task
   end
 
   def create
