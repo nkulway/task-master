@@ -1,0 +1,132 @@
+openapi: 3.0.0
+info:
+  title: Tasks API
+  description: API documentation for the Tasks app
+  version: 1.0.0
+paths:
+  /tasks:
+    get:
+      summary: Fetches all tasks
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+    post:
+      summary: Creates a new task
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: Task title
+                name:
+                  type: string
+                  example: Task name
+                completed:
+                  type: boolean
+                  example: false
+                description:
+                  type: string
+                  example: Task description
+      responses:
+        '201':
+          description: Task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '422':
+          description: Invalid input
+
+  /tasks/{id}:
+    get:
+      summary: Shows a task
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '404':
+          description: Not Found
+    put:
+      summary: Updates an existing task
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: Updated task title
+                name:
+                  type: string
+                  example: Updated task name
+                completed:
+                  type: boolean
+                  example: true
+                description:
+                  type: string
+                  example: Updated task description
+      responses:
+        '200':
+          description: Task updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '422':
+          description: Invalid input
+    delete:
+      summary: Deletes a task
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Task deleted
+        '404':
+          description: Not Found
+
+components:
+  schemas:
+    Task:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        name:
+          type: string
+        completed:
+          type: boolean
+        description:
+          type: string
