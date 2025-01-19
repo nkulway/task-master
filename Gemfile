@@ -36,8 +36,8 @@ gem "thruster", require: false
 gem "rack-cors"
 
 # OpenAPI Swagger
-gem "rswag-api", "~> 2.16.0"
-gem "rswag-ui", "~> 2.16.0"
+gem "rswag-api"
+gem "rswag-ui"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -50,5 +50,5 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "rspec-rails"
-  gem "rswag-specs", "~> 2.16.0"
+  gem "rswag-specs"
 end

@@ -354,9 +354,9 @@ DEPENDENCIES
   rack-cors
   rails (~> 8.0.1)
   rspec-rails
-  rswag-api (~> 2.16.0)
-  rswag-specs (~> 2.16.0)
-  rswag-ui (~> 2.16.0)
+  rswag-api
+  rswag-specs
+  rswag-ui
   rubocop-rails-omakase
   solid_cable
   solid_cache
