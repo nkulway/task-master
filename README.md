@@ -14,11 +14,6 @@ Before running the application, ensure you have the following installed:
 
 1. Clone the repository:
 
-    ```bash
-    git clone <repo-url> backend
-    cd backend
-    ```
-
 2. Install Ruby dependencies:
 
     ```bash
@@ -47,6 +42,7 @@ Before running the application, ensure you have the following installed:
     ```
 
 2. Visit `http://localhost:3000` in your browser or use it as an API endpoint for the frontend.
+  a. The frontend project can be found [here](https://github.com/nkulway/task-master-web-app) 
 
 The backend will now be running, and it will handle requests related to task management.
 
@@ -131,22 +127,6 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
 end
 ```
 
-## Folder Structure
-
-```bash
-backend/
-├── app/
-│   ├── controllers/       # Controller files for handling requests
-│   ├── models/            # Model files for tasks
-│   └── serializers/       # Serializer for task responses (if applicable)
-├── config/                # Configuration files
-│   └── cors.rb            # CORS configuration for allowing frontend requests
-├── db/                    # Database files and migrations
-├── Gemfile                # Ruby dependencies
-├── Gemfile.lock           # Lock file for Ruby dependencies
-├── config.ru              # Rack configuration file
-└── routes.rb              # Defines the routes (API endpoints)
-```
 
 ## Notes
 
